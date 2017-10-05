@@ -1,16 +1,33 @@
 import time
 
-print("Welkom Bij Galgje")
-print("")
-print("Om het hele woord te raden: raad eerst een vraagteken")
+for i in range(9):
+    print(" ")
 
-geheimwoord = "derrie"
+print("888")
+print("888")
+print("888")
+print("88888b.  8888b. 88888b.  .d88b. 88888b.d88b.  8888b. 88888b.")
+print("888 _88b    _88b888 _88bd88P_88b888 _888 _88b    _88b888 _88b")
+print("888  888.d888888888  888888  888888  888  888.d888888888  888")
+print("888  888888  888888  888Y88b 888888  888  888888  888888  888")
+print("888  888_Y888888888  888 _Y88888888  888  888_Y888888888  888")
+print("                             888")
+print("                         Y8b d88")
+print("                          _Y88P")
+
+for i in range(20):
+    print("")
+
+print("TIP: Om het hele woord te raden type ?")
+print(" ")
+geheimewoord = input("voer het gehieme woord in : ")
+
 geraden = 0
 
-alfabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+alleletters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-galg = 0
-foutgeraden = 0;
+stage = 0
+foutgeraden = 0
 
 geradenletters = []
 geradenwoord = []
@@ -21,7 +38,7 @@ added = 0
 
 eenlettergoed = 0
 
-lengte = len(geheimwoord)
+lengte = len(geheimewoord)
 for i in range(lengte):
     geradenwoord.append("_")
 
@@ -38,7 +55,7 @@ def voortgang():
     print("")
 
 def galg():
-    for i in range(10):
+    for i in range(40):
             print("")
     if foutgeraden == 0:
         print(" ")
@@ -96,6 +113,7 @@ def galg():
         print("  |  / \ ")
         print("  |")
         print("=========")
+
 while geraden == 0:
     voortgang()
     geradenletter = input("Raad een Letter: ")
@@ -104,7 +122,7 @@ while geraden == 0:
         raadwoord = input("raad het hele woord: ")
         if not len(raadwoord) == lengte:
             print("De lengte komt niet overeen met het geheime woord")
-        elif raadwoord == geheimwoord:
+        elif raadwoord == geheimewoord:
             break
         else:
             print("Dat is niet goed, ga verder met letters raden of probeer het opnieuw!")
@@ -115,7 +133,7 @@ while geraden == 0:
     elif len(geradenletter) > 1:
         print("Je mag maar 1 letter opgeven")
         time.sleep(1)
-    elif not geradenletter in alfabet:
+    elif not geradenletter in alleletters:
         print("Je mag alleen letter zeggen, geen leesteken, hoofdletters, cijfers e.d.")
         time.sleep(1)
     elif geradenletter in geradenletters:
@@ -123,8 +141,8 @@ while geraden == 0:
         time.sleep(1)
     else:
         for i in range(lengte):
-            if geradenletter == geheimwoord[i]:
-                print("Je hebt de letter " + geradenletter + " geraden")
+            if geradenletter == geheimewoord[i]:
+                print("Goedzo, de" + geradenletter + "zat in het woord!")
                 geradenwoord[i] = geradenletter
                 if added == 0:
                     geradenletters.append(geradenletter)
@@ -147,6 +165,6 @@ while geraden == 0:
 
 print("")
 if foutgeraden == 6:
-    print("Hellaas! Je hebt verloren, het geheime woord was " + geheimwoord)
+    print("Hellaas! Je hebt verloren, het geheime woord was " + geheimewoord + "!")
 else:
-    print("Je hebt gewonnen!! Het geheime woord was inderdaad " + geheimwoord + " !")
+    print("Je hebt gewonnen!! Het geheime woord was inderdaad " + geheimewoord + "!")
