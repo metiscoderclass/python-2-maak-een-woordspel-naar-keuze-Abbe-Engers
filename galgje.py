@@ -96,11 +96,14 @@ for i in range(20):
 print("TIP: Om het hele woord te raden type ?")
 print(" ")
 geheimewoord = input("voer het gehieme woord in : ")
-gebruikteletters = [""]
+gebruikteletters = []
 
 while True:
+    for i in gebruikteletters:
+        print(i + ", ", end='')
+    print(" ")
     letter = input("voer een letter in om het woord te raden : ")
-    if letter == "stop":
+    if letter == "qwertyuiop":
         break
     aantal = len(letter)
     if letter in "abcdefghijklmnopqrstuvwxyz" and aantal == 1:
