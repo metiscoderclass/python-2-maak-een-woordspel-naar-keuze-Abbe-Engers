@@ -3,6 +3,8 @@ import random
 
 stage = 0
 
+letterswoord = []
+
 def stages(stage):
     if stage == 0:
         print(" ")
@@ -91,19 +93,22 @@ while True:
         print(i + ", ", end='')
     print(" ")
     letter = input("voer een letter in om het woord te raden : ")
-    if letter == "qwertyuiop":
+    if letter == "qq":
         break
     aantal = len(letter)
     if letter in "abcdefghijklmnopqrstuvwxyz" and aantal == 1:
         if letter not in geheimewoord:
             print("u heeft een foute letter gekozen, probeer het nog een keer!")
             stage += 1
-            print(stage)
         elif letter in gebruikteletters:
             print("u heeft deze letter al gebruikt, gebruik een andere letter")
 
         elif letter in geheimewoord:
             print("letter zit in het woord!")
         gebruikteletters.append(letter)
+
     else:
         print("potverdikkie dat is geen letter probeer een ECHTE letter!")
+
+    if letter in geheimewoord:
+        print(geheimewoord.replace(letter, '_'))
