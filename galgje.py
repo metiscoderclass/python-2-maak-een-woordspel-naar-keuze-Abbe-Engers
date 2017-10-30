@@ -6,6 +6,8 @@ geheimewoord = random.choice(lijstwoorden)
 
 aantalgeraden = 0
 
+gebruikteletters = []
+
 def checkgoed():
     for b in range(len(geheimewoord)):
         if not geheimewoord[b] in goedgeradenletters:
